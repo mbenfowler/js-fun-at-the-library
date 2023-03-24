@@ -23,7 +23,6 @@ function saveReview(review, reviews) {
 function calculatePageCount(bookTitle) {
   var chars = bookTitle.split("");
   return chars.length * 20;
-  
 }
 
 function writeBook(bookTitle, bookCharacter, genre) {
@@ -33,6 +32,7 @@ function writeBook(bookTitle, bookCharacter, genre) {
     pageCount: calculatePageCount(bookTitle),
     genre: genre
   }
+  
   return book;
 }
 

@@ -17,13 +17,11 @@ function addBook(library, book) {
 
 function checkoutBook(library, bookTitle, genre) {
   var genreShelf = library.shelves[genre];
-  var checkoutSuccess = false;
   var checkoutMsg = `Sorry, there are currently no copies of ${bookTitle} available at the ${library.name}.`
 
   for(i = 0; i < genreShelf.length; i++) {
-    if(library.shelves[genre][i].title === bookTitle) {
-      library.shelves[genre].splice(library.shelves[genre][i], 1);
-      checkoutSuccess = true;
+    if(genreShelf[i].title === bookTitle) {
+      genreShelf.splice(genreShelf[i], 1);
       checkoutMsg = `You have now checked out ${bookTitle} from the ${library.name}.`;
     }
   }
@@ -48,9 +46,6 @@ function takeStock(library, genre) {
     var libraryStockMsg = `There are a total of ${bookCounter} books at the ${library.name}.`
     return libraryStockMsg;
   }
-
-  
-  
 }
 
 module.exports = {
